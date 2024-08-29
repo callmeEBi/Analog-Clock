@@ -1,0 +1,164 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$gray-mid: #b0bec5;
+
+body {
+  height: 100vh;
+  background: url(../image/1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  font-family: poppins;
+}
+
+.main_wrapper {
+  position: relative;
+}
+
+.clock {
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+  backdrop-filter: blur(8px);
+  position: relative;
+  font-size: 2rem;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.hour_marker {
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  background: #d5ed9f;
+  &--1 {
+    right: 23%;
+    top: 13%;
+    transform: rotate(-60deg);
+  }
+
+  &--2 {
+    right: 9%;
+    top: 28%;
+    transform: rotate(-37deg);
+  }
+
+  &--4 {
+    right: 23%;
+    bottom: 13%;
+    transform: rotate(+60deg);
+  }
+
+  &--5 {
+    right: 9%;
+    bottom: 28%;
+    transform: rotate(+37deg);
+  }
+
+  &--7 {
+    left: 23%;
+    bottom: 13%;
+    transform: rotate(-60deg);
+  }
+
+  &--8 {
+    left: 9%;
+    bottom: 28%;
+    transform: rotate(-37deg);
+  }
+
+  &--10 {
+    left: 23%;
+    top: 13%;
+    transform: rotate(+60deg);
+  }
+
+  &--11 {
+    left: 9%;
+    top: 28%;
+    transform: rotate(+37deg);
+  }
+}
+
+.hour_number {
+  width: max-content;
+  position: absolute;
+  color: #ffdbb5;
+  &--3 {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+  }
+
+  &--6 {
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--9 {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+  }
+
+  &--12 {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.middle_circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: $gray-mid;
+}
+
+.pointer {
+  &--hour,
+  &--minute,
+  &--second {
+    position: absolute;
+    top: 40%;
+    left: 66%;
+    transform-origin: left;
+    transform: rotate(0deg);
+    height: 4px;
+    width: 60px;
+    background-color: $gray-mid;
+    border-radius: 0 20px 20px 0;
+  }
+
+  &--minute {
+    width: 100px;
+  }
+
+  &--second {
+    width: 120px;
+    position: relative;
+    overflow: none;
+    &::after {
+      content: "";
+      width: 20%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      background-color: red;
+    }
+  }
+}
