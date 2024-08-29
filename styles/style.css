@@ -8,7 +8,7 @@
 
 body {
   height: 100vh;
-  background: url("../image/1.jpg");
+  background: url(../image/1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -91,7 +91,7 @@ body {
   transform: translateY(-50%);
 }
 .hour_number--6 {
-  bottom: 5%;
+  bottom: 2%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -101,7 +101,7 @@ body {
   transform: translateY(-50%);
 }
 .hour_number--12 {
-  top: 5%;
+  top: 2%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -111,30 +111,33 @@ body {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  width: 15px;
-  height: 15px;
+  width: 22px;
+  height: 22px;
   border-radius: 100%;
   background-color: #b0bec5;
 }
 
 .pointer--hour, .pointer--minute, .pointer--second {
   position: absolute;
-  top: 40%;
-  left: 66%;
+  top: 38%;
+  left: 61%;
   transform-origin: left;
   transform: rotate(0deg);
-  height: 4px;
+  height: 9px;
   width: 60px;
-  background-color: #b0bec5;
+  background-color: rgba(176, 190, 197, 0.5);
+  backdrop-filter: blur(150px);
   border-radius: 0 20px 20px 0;
 }
 .pointer--minute {
-  width: 100px;
+  width: 120px;
+  height: 8px;
 }
 .pointer--second {
   width: 120px;
+  height: 6px;
   position: relative;
-  overflow: none;
+  overflow: hidden;
 }
 .pointer--second::after {
   content: "";
